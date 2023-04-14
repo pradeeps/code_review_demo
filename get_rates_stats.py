@@ -170,9 +170,7 @@ def main():
     suffix = None
     if os.name is not "nt":
         adb_devices = (
-            os.popen("adb devices | grep -v attached | grep device | awk '{print $1}' ")
-            .read()
-            .splitlines()
+            os.popen("adb devices | grep -v attached | grep device | awk '{print $1}' ").read().splitlines()
         )
         if len(sys.argv) == 4:
             suffix = sys.argv[3]
